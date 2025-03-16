@@ -434,18 +434,16 @@ const NodeToolbarComponent = memo(
     const renderToolbarButtons = useMemo(
       () => (
         <>
-          {hasCode && (
-            <ToolbarButton
+          <ToolbarButton
               className={isCustomComponent ? "!bg-accent-pink" : ""}
               icon="Code"
-              label="Code"
+              label="View Source"
               onClick={() => setOpenModal(true)}
               shortcut={shortcuts.find((s) =>
                 s.name.toLowerCase().startsWith("code"),
               )}
               dataTestId="code-button-modal"
             />
-          )}
           {nodeLength > 0 && (
             <ToolbarButton
               icon="SlidersHorizontal"
